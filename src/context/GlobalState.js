@@ -6,9 +6,9 @@ import AppReducer from './AppReducer';
 // Create the initial state
 const initialState = {
     transactions: [
-        {id:1, description: 'Project 1 Income', trasactionAmount: 1000},
-        {id:2, description: 'Project 1 Income', trasactionAmount: 1200},
-        {id:3, description: 'Project 1 Income', trasactionAmount: 1300},
+        {id:1, description: 'Project 1 Income', transactionAmount: 1000},
+        {id:2, description: 'Project 2 Income', transactionAmount: -1200},
+        {id:3, description: 'Project 3 Income', transactionAmount: 1300},
 
     ]
 }
@@ -23,7 +23,7 @@ export const GlobalProvider = ({ children }) => {
     // Actions for Transactions
 
         // Delete Existing Transaction Action
-        function delTransaction(id) {
+        const delTransaction = (id)=> {
             dispatch({
                 type: 'DELETE_TRANSACTION',
                 payload: id
@@ -31,7 +31,7 @@ export const GlobalProvider = ({ children }) => {
         }
 
         // Add New Transaction Action
-        function addTransaction(transaction) {
+        const addTransaction = (transaction) => {
             dispatch({
                 type: 'ADD_TRANSACTION',
                 payload: transaction
